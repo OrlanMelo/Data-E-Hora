@@ -32,9 +32,13 @@ public:
 
 		BOOL Result = AdjustTokenPrivileges(Token, FALSE, &Privilegios, 0, 0, 0);
 		if (Result == NULL)
+		{
 			cout << "Ocorreu um erro ao ajustar os privilégios de acesso ao tempo..\n";
+		}
 		else
+		{
 			cout << "Sucesso ao atribuir os privilégios necessários..\n";
+		}
 	}
 
 	void ObterData(wstring Formato)
@@ -89,9 +93,13 @@ public:
 
 		cout << "O ajuste está definido para: " << Tempo << " em incrementos de: " << Incrementos << "\n";
 		if (Status == TRUE)
+		{
 			cout << "Habilitado\n";
+		}
 		else
+		{
 			cout << "Desabilitado\n";
+		}
 
 		//Ajuste
 		SetSystemTimeAdjustmentPrecise(Tempo, Ajustar);
